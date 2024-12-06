@@ -7,983 +7,989 @@
 		<color rgba="1 1 1 1"/>
 	</material>
 	<link name='wall1'>
-		<visual name='visual'>
+		<visual name='collision'>
+			<geometry>
+				<box size="0.05 0.55 0.3"/>
+			</geometry>
+			<origin xyz="-2.25 -2.25 0.15" rpy="0 0 0"/>
+		</visual>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 -2.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
-	</link>
+		</collision>
+	</link>	
 
 	<link name='wall2'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall3'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 -1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall4'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 -1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall5'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall6'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2 -1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall7'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall8'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall9'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall10'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall11'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall12'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2.25 1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall13'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-2 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall14'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall15'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall16'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.75 -1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall17'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.75 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall18'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall19'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall20'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall21'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.5 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall22'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall23'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.25 -1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall24'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall25'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall26'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 -1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall27'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall28'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall29'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.25 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall30'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1.25 1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall31'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-1 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall32'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall33'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.75 -1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall34'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall35'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.75 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall36'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 -0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall37'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.75 0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall38'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall39'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.75 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall40'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.75 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall41'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall42'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.5 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall43'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall44'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.25 -1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall45'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall46'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall47'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall48'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="-0.25 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall49'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall50'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall51'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall52'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall53'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 -1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall54'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall55'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 -0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall56'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.25 0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall57'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall58'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall59'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.25 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall60'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall61'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.5 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall62'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall63'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall64'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.75 -1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall65'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 -1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall66'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 -1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall67'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.75 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall68'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.75 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall69'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="0.75 1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall70'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall71'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall72'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall73'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall74'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall75'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.25 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall76'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 0 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall77'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.25 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall78'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 0.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall79'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 1 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall80'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.5 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall81'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2 -2.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall82'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 -2.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall83'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2 -2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall84'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 -1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall85'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.75 -1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall86'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2 -1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall87'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 -1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall88'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.75 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall89'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 -0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall90'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.75 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall91'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 -0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall92'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 0.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall93'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 0.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall94'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="1.75 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall95'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 1.25 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall96'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2 1.5 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall97'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2.25 1.75 0.15" rpy="0 0 0"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<link name='wall98'>
-		<visual name='visual'>
+		<collision name='collision'>
 			<geometry>
 				<box size="0.05 0.55 0.3"/>
 			</geometry>
 			<origin xyz="2 2 0.15" rpy="0 0 1.57"/>
 			<material name="white"/>
-		</visual>
+		</collision>
 	</link>
 
 	<joint name="walls_to_world1" type="fixed">
