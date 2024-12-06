@@ -3,26 +3,30 @@ Project Setup
 
 Install dependencies: Gym-PyBullet-Drones, PyBullet, NumPy, Matplotlib, etc.
 Set up a version-controlled repository (e.g., GitHub) to manage code and documentation.
-Environment Setup
+
+**Environment Setup**
 
 Define the simulation environment in Gym-PyBullet-Drones.
 Model static building layouts with obstacles like walls and furniture using convex shapes.
-Set up randomized environments for testing robustness.
-Drone Modeling
+
+**Drone Modeling**
 
 Utilize the existing quadrotor model from Gym-PyBullet-Drones.
 Ensure dynamics and kinematics are consistent with the motion equations described.
-Motion Planning Implementation
+
+**Motion Planning Implementation**
 
 Implement or integrate the A*, RRT*, and motion primitives algorithms.
 Add functions to generate paths in a known static environment.
 Incorporate safety buffers around obstacles during path planning.
-Control System Integration
+
+**Control System Integration**
 
 Use PID and LQR controllers for trajectory tracking:
 PID for smoothed waypoint following (A*).
 LQR for real-time trajectory tracking (RRT*, Motion Primitives).
-Simulation and Validation
+
+**Simulation and Validation**
 
 Simulate drone motion in the environment for each algorithm.
 Record metrics:
@@ -30,15 +34,13 @@ Path length.
 Solving time.
 Obstacle clearance.
 Use PyBullet’s visualization tools to validate motion.
-Performance Analysis
+
+**Performance Analysis**
 
 Compare algorithms based on metrics.
 Develop plots and quantitative insights.
-Documentation and Submission
 
-Prepare the report using the IEEE conference template.
-Ensure the codebase is clean, modular, and well-documented with a clear README.
-
+###########################################3
 
 Implementation Steps
 Initialize the Repository
