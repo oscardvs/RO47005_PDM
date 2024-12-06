@@ -39,57 +39,6 @@ Documentation and Submission
 Prepare the report using the IEEE conference template.
 Ensure the codebase is clean, modular, and well-documented with a clear README.
 
-FILE STRUCTURE
-
-project/
-│
-├── src/
-│   ├── drone_model/
-│   │   ├── __init__.py
-│   │   ├── quadrotor.py          # Quadrotor dynamics and kinematics
-│   │   └── controllers/
-│   │       ├── pid.py            # PID controller
-│   │       └── lqr.py            # LQR controller
-│   │
-│   ├── planners/
-│   │   ├── __init__.py
-│   │   ├── a_star.py             # A* motion planner
-│   │   ├── rrt_star.py           # RRT* motion planner
-│   │   └── motion_primitives.py  # Motion primitives planner
-│   │
-│   ├── simulation/
-│   │   ├── __init__.py
-│   │   ├── environment.py        # Custom simulation environment setup
-│   │   ├── obstacle_generator.py # Obstacle generation
-│   │   └── evaluation.py         # Performance evaluation and metrics
-│   │
-│   └── utils/
-│       ├── visualization.py      # Visualization tools for PyBullet
-│       ├── logger.py             # Logging utilities
-│       └── helper.py             # Miscellaneous utilities
-│
-├── tests/
-│   ├── test_drone_model.py       # Unit tests for drone model
-│   ├── test_planners.py          # Unit tests for planners
-│   └── test_environment.py       # Unit tests for environment
-│
-├── docs/
-│   ├── report/
-│   │   └── ieee_template.docx    # Report template
-│   └── presentation/
-│       └── slides.pptx           # Presentation template
-│
-├── data/
-│   ├── results/                  # Results from simulations
-│   └── configs/                  # Configuration files for simulations
-│
-├── notebooks/
-│   └── analysis.ipynb            # Jupyter notebook for result analysis
-│
-├── README.md                     # Overview of the project
-├── requirements.txt              # Dependencies for the project
-└── setup.py                      # Installation script
-
 
 Implementation Steps
 Initialize the Repository
