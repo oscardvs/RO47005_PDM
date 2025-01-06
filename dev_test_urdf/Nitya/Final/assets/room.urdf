@@ -182,15 +182,15 @@
     <link name='wall5'>
         <visual name='visual'>
             <geometry>
-                <box size="3.75 0.2 2"/>
+                <box size="3 0.2 2"/>
             </geometry>
-            <origin xyz="0.625 0.1 1" rpy="0 0 0"/>
+            <origin xyz="1 0.1 1" rpy="0 0 0"/>
         </visual>
         <collision name='collision'>
             <geometry>
-                <box size="3.75 0.2 2"/>
+                <box size="3 0.2 2"/>
             </geometry>
-            <origin xyz="0.625 0.1 1" rpy="0 0 0"/>
+            <origin xyz="1 0.1 1" rpy="0 0 0"/>
         </collision>
         <material name="white"/> 
     </link> 
