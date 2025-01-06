@@ -59,8 +59,8 @@ highlight_position = None
 num_rows=2    # rows
 num_cols=2  # columns
 spacing=7.5  # distance between buildings
-floors_min=1
-floors_max=2
+floors_min=2
+floors_max=4
 startPos = [0, -0.5, 2.15]
 startOrientation = p.getQuaternionFromEuler([0, 0, 0])
 white_alpha = 0.3
@@ -1312,7 +1312,7 @@ def randomizer():
     global goal_position_to_repeat
     global startOrientation
 
-    p.resetDebugVisualizerCamera(cameraDistance=0.5*np.linalg.norm(bounds[:, 1] - bounds[:, 0]), cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(bounds.mean(axis = 1)))
+    p.resetDebugVisualizerCamera(cameraDistance=0.5*np.linalg.norm(bounds[:, 1] - bounds[:, 0]), cameraYaw=50-50, cameraPitch=-30, cameraTargetPosition=list(bounds.mean(axis = 1)))
     if highlight_position is not None:
         dehighlight_floor(top_floor_id, physicsClient)
     [b_x, b_y, top_floor_z], top_floor_id = highlight_random_floor(buildings, ROOM_URDF_PATH, ROOM_HEIGHT, physicsClient)
@@ -1417,6 +1417,8 @@ def run_simulation():
     merged_mins, merged_maxs, map_indices = merge_bounding_boxes(mins, maxs, merge_threshold)
     bounds = find_bounds(mins, maxs, buffer, space_outside_building)
     merged_mins, merged_maxs, map_indices = merge_bounding_boxes(mins, maxs, merge_threshold)
+    p.resetDebugVisualizerCamera(cameraDistance=0.5*np.linalg.norm(bounds[:, 1] - bounds[:, 0]), cameraYaw=50-50, cameraPitch=-30, cameraTargetPosition=list(bounds.mean(axis = 1)))
+
 
     start_time = time.time()
     
@@ -1458,7 +1460,6 @@ def run_simulation():
     droneId = p.loadURDF(DRONE_URDF_PATH, basePosition=startPos, useFixedBase=True)
     
     # Adjust the camera to focus on the drone
-    p.resetDebugVisualizerCamera(cameraDistance=0.5*np.linalg.norm(bounds[:, 1] - bounds[:, 0]), cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(bounds.mean(axis = 1)))
     follower_mpc_hover(droneId, startPos, buffer)
     
     # Disconnect
