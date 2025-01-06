@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: gym_pybullet_drones
+Version: 1.0
+Summary: Gym environments for drones using PyBullet
+Author: Your Name
+Requires-Dist: numpy
+Requires-Dist: pybullet
+Requires-Dist: gymnasium
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: stable-baselines3
+Requires-Dist: transforms3d
