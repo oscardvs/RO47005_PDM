@@ -69,15 +69,15 @@
     <link name='wall4a'>
         <visual name='visual'>
             <geometry>
-                <box size="5 0.2 0.7"/>
+                <box size="5 0.2 0.5"/>
             </geometry>
-            <origin xyz="0 -2.4 1.65" rpy="0 0 0"/>
+            <origin xyz="0 -2.4 1.75" rpy="0 0 0"/>
         </visual>
         <collision name='collision'>
             <geometry>
-                <box size="5 0.2 0.7"/>
+                <box size="5 0.2 0.5"/>
             </geometry>
-            <origin xyz="0 -2.4 1.65" rpy="0 0 0"/>
+            <origin xyz="0 -2.4 1.75" rpy="0 0 0"/>
         </collision>
         <material name="white"/> 
     </link> 
@@ -85,15 +85,15 @@
     <link name='wall4b'>
         <visual name='visual'>
             <geometry>
-                <box size="5 0.2 0.7"/>
+                <box size="5 0.2 0.5"/>
             </geometry>
-            <origin xyz="0 -2.4 0.35" rpy="0 0 0"/>
+            <origin xyz="0 -2.4 0.25" rpy="0 0 0"/>
         </visual>
         <collision name='collision'>
             <geometry>
-                <box size="5 0.2 0.7"/>
+                <box size="5 0.2 0.5"/>
             </geometry>
-            <origin xyz="0 -2.4 0.35" rpy="0 0 0"/>
+            <origin xyz="0 -2.4 0.25" rpy="0 0 0"/>
         </collision>
         <material name="white"/> 
     </link> 
@@ -101,13 +101,13 @@
     <link name='wall4c'>
         <visual name='visual'>
             <geometry>
-                <box size="1.5 0.2 0.6"/>
+                <box size="1.5 0.2 1"/>
             </geometry>
             <origin xyz="-1.75 -2.4 1" rpy="0 0 0"/>
         </visual>
         <collision name='collision'>
             <geometry>
-                <box size="1.5 0.2 0.6"/>
+                <box size="1.5 0.2 1"/>
             </geometry>
             <origin xyz="-1.75 -2.4 1" rpy="0 0 0"/>
         </collision>
@@ -118,13 +118,13 @@
     <link name='wall4d'>
         <visual name='visual'>
             <geometry>
-                <box size="1.5 0.2 0.6"/>
+                <box size="1.5 0.2 1"/>
             </geometry>
             <origin xyz="1.75 -2.4 1" rpy="0 0 0"/>
         </visual>
         <collision name='collision'>
             <geometry>
-                <box size="1.5 0.2 0.6"/>
+                <box size="1.5 0.2 1"/>
             </geometry>
             <origin xyz="1.75 -2.4 1" rpy="0 0 0"/>
         </collision>
