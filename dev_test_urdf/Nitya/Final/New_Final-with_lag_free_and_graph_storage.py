@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import pybullet as p
@@ -26,7 +26,7 @@ import pickle
 import hashlib
 
 
-# In[2]:
+# In[ ]:
 
 
 ##Global Variables
@@ -93,12 +93,12 @@ graph = None
 graph_dir = "graphs"  # Directory to store graph files
 # Ensure the directory exists
 os.makedirs(graph_dir, exist_ok=True)
-
-
 lag_free_sim = True
+random_seed = 42
+random.seed(random_seed)
 
 
-# In[3]:
+# In[ ]:
 
 
 def visualize_cylinder(center1, center2, radius):
@@ -144,7 +144,7 @@ def visualize_cylinder(center1, center2, radius):
     )
 
 
-# In[4]:
+# In[ ]:
 
 
 def de_visualize_cylinder():
@@ -156,7 +156,7 @@ def de_visualize_cylinder():
         previous_cylinder_id = None
 
 
-# In[5]:
+# In[ ]:
 
 
 def compute_quaternion_for_orientation(desired_vector):
@@ -169,7 +169,7 @@ def compute_quaternion_for_orientation(desired_vector):
     # Normalize the desired vector
     desired_vector = np.array(desired_vector, dtype=float)
     if np.linalg.norm(desired_vector) == 0:
-        raise ValueError("Desired vector cannot be zero.")
+        return [0.0, 0.0, 0.0, 1.0]
     desired_vector = desired_vector / np.linalg.norm(desired_vector)
     
     # Initial orientation vector (drone's z-axis)
@@ -202,7 +202,7 @@ def compute_quaternion_for_orientation(desired_vector):
     return [x, y, z, w]
 
 
-# In[6]:
+# In[ ]:
 
 
 def parse_collision_boxes(urdf_file):
@@ -229,7 +229,7 @@ def parse_collision_boxes(urdf_file):
     return boxes
 
 
-# In[7]:
+# In[ ]:
 
 
 def generate_obstacles(num_floors, urdf_file, floor_height, rotation_step=90, building_base=[0, 0, 0]):
@@ -292,7 +292,7 @@ def generate_obstacles(num_floors, urdf_file, floor_height, rotation_step=90, bu
     return all_obstacles, mins, maxs
 
 
-# In[8]:
+# In[ ]:
 
 
 def euler_to_rotation_matrix(rpy):
@@ -307,7 +307,7 @@ def euler_to_rotation_matrix(rpy):
     return R
 
 
-# In[9]:
+# In[ ]:
 
 
 def generate_grid_buildings(num_rows=4, num_cols=5, spacing=10.0, floors_min=3, floors_max=5):
@@ -330,7 +330,7 @@ def generate_grid_buildings(num_rows=4, num_cols=5, spacing=10.0, floors_min=3, 
     return buildings
 
 
-# In[10]:
+# In[ ]:
 
 
 def create_buildings_and_obstacles(buildings,
@@ -385,7 +385,7 @@ def create_buildings_and_obstacles(buildings,
     return all_buildings_obstacles, all_mins, all_maxs
 
 
-# In[11]:
+# In[ ]:
 
 
 def highlight_random_floor(buildings,
@@ -428,7 +428,7 @@ def highlight_random_floor(buildings,
     return [b_x, b_y, top_floor_z], top_floor_id
 
 
-# In[12]:
+# In[ ]:
 
 
 def dehighlight_floor(top_floor_id, pybullet_client_id):
@@ -444,7 +444,7 @@ def dehighlight_floor(top_floor_id, pybullet_client_id):
         )
 
 
-# In[13]:
+# In[ ]:
 
 
 def merge_bounding_boxes(mins, maxs, threshold):
@@ -516,7 +516,7 @@ def merge_bounding_boxes(mins, maxs, threshold):
     return merged_mins, merged_maxs, map_indices
 
 
-# In[14]:
+# In[ ]:
 
 
 def is_point_in_cuboid(point, min_corner, max_corner):
@@ -552,7 +552,7 @@ def does_line_segment_intersect_cuboid(p1, p2, min_corner, max_corner):
     return True  # The segment intersects the cuboid
 
 
-# In[15]:
+# In[ ]:
 
 
 def merge_irrelevant_boxes(start_point, goal_point, mins, maxs, merged_mins, merged_maxs, map_indices):
@@ -575,7 +575,7 @@ def merge_irrelevant_boxes(start_point, goal_point, mins, maxs, merged_mins, mer
     return final_mins, final_maxs
 
 
-# In[16]:
+# In[ ]:
 
 
 def find_bounds(mins, maxs, buffer, space_outside_building):
@@ -598,7 +598,7 @@ def find_bounds(mins, maxs, buffer, space_outside_building):
     return bounds
 
 
-# In[17]:
+# In[ ]:
 
 
 def adjusted_min_max(final_mins, final_maxs, buffer):
@@ -607,7 +607,7 @@ def adjusted_min_max(final_mins, final_maxs, buffer):
     return adjusted_min, adjusted_max
 
 
-# In[18]:
+# In[ ]:
 
 
 def check_collision(point, adjusted_min, adjusted_max):
@@ -617,7 +617,7 @@ def check_collision(point, adjusted_min, adjusted_max):
     return False
 
 
-# In[19]:
+# In[ ]:
 
 
 def check_collision_line(point1, point2, adjusted_min, adjusted_max):
@@ -627,7 +627,7 @@ def check_collision_line(point1, point2, adjusted_min, adjusted_max):
     return False
 
 
-# In[20]:
+# In[ ]:
 
 
 def update_sphere_color(sphere_id, sphere_position, adjusted_min, adjusted_max):
@@ -640,7 +640,7 @@ def update_sphere_color(sphere_id, sphere_position, adjusted_min, adjusted_max):
         p.changeVisualShape(sphere_id, -1, rgbaColor=[0, 1, 0, 1])
 
 
-# In[21]:
+# In[ ]:
 
 
 def euclidean_distance(point1, point2):
@@ -649,7 +649,7 @@ def euclidean_distance(point1, point2):
     return np.linalg.norm(point1 - point2)
 
 
-# In[22]:
+# In[ ]:
 
 
 def find_node_grid(bounds, cell_size):
@@ -672,7 +672,7 @@ def find_node_grid(bounds, cell_size):
     return node_grid
 
 
-# In[23]:
+# In[ ]:
 
 
 def find_collision_free_array(node_grid, adjusted_min, adjusted_max):
@@ -688,7 +688,7 @@ def find_collision_free_array(node_grid, adjusted_min, adjusted_max):
     return collision_free_array
 
 
-# In[24]:
+# In[ ]:
 
 
 def build_graph(collision_free_array, cell_size):
@@ -719,7 +719,7 @@ def build_graph(collision_free_array, cell_size):
     return graph
 
 
-# In[25]:
+# In[ ]:
 
 
 def reconstruct_path(parents, current_node, start_node):
@@ -752,7 +752,7 @@ def get_node_with_lowest_f_score(open_set, g, stop_node):
     return lowest_node
 
 
-# In[26]:
+# In[ ]:
 
 
 def show_astar_warning_popup():
@@ -764,7 +764,7 @@ def show_astar_warning_popup():
     messagebox.showwarning("Warning", "Start or Goal not inside graph (or path not found)")
 
 
-# In[27]:
+# In[ ]:
 
 
 def aStarAlgo(start_node, stop_node, heuristic_func, graph, cell_size):
@@ -833,7 +833,7 @@ def aStarAlgo(start_node, stop_node, heuristic_func, graph, cell_size):
     return [start_node]
 
 
-# In[28]:
+# In[ ]:
 
 
 def show_warning_popup():
@@ -845,7 +845,7 @@ def show_warning_popup():
     messagebox.showwarning("Warning", "Not enough iterations!")
 
 
-# In[29]:
+# In[ ]:
 
 
 def RRT_build(q_0, q_goal, n, bounds, adjusted_min, adjusted_max):
@@ -904,7 +904,7 @@ def RRT_build(q_0, q_goal, n, bounds, adjusted_min, adjusted_max):
     return V, E
 
 
-# In[30]:
+# In[ ]:
 
 
 def find_RRT_path(E, q_0, q_goal):
@@ -928,7 +928,7 @@ def find_RRT_path(E, q_0, q_goal):
     return path
 
 
-# In[31]:
+# In[ ]:
 
 
 def rrt_final(q_0, q_goal, n, bounds, adjusted_min, adjusted_max):
@@ -940,7 +940,7 @@ def rrt_final(q_0, q_goal, n, bounds, adjusted_min, adjusted_max):
     return path
 
 
-# In[32]:
+# In[ ]:
 
 
 def update_sphere_positions(positions):
@@ -952,7 +952,7 @@ def update_sphere_positions(positions):
         p.resetBasePositionAndOrientation(sphere_ids[i], list(new_position), [0, 0, 0, 1])  # Update position
 
 
-# In[33]:
+# In[ ]:
 
 
 def get_initial_sphere_positions(num_spheres=N):
@@ -966,7 +966,7 @@ def get_initial_sphere_positions(num_spheres=N):
     return positions
 
 
-# In[34]:
+# In[ ]:
 
 
 def mpc_control(N, x_init, v_init, x_target, dt, buffer):
@@ -1008,7 +1008,8 @@ def mpc_control(N, x_init, v_init, x_target, dt, buffer):
         # Thrust constraints
         constraints += [cp.abs(u[0, k]) <= max_thrust_xy]
         constraints += [cp.abs(u[1, k]) <= max_thrust_xy]
-        constraints += [cp.abs(u[2, k]) <= max_thrust_z]
+        constraints += [u[2, k] <= max_thrust_z]
+        constraints += [u[2, k] >= 0]
         constraints += [cp.norm(u[:, k], 2) <= max_total_thrust]
 
         # Cylinder radial constraint
@@ -1032,7 +1033,7 @@ def mpc_control(N, x_init, v_init, x_target, dt, buffer):
     return x[:, 1:].value, v[:, 1:].value, u.value
 
 
-# In[35]:
+# In[ ]:
 
 
 def mpc_control_hover(N, x_init, v_init, x_target, dt, buffer):
@@ -1068,7 +1069,8 @@ def mpc_control_hover(N, x_init, v_init, x_target, dt, buffer):
         # Thrust constraints
         constraints += [cp.abs(u[0, k]) <= max_thrust_xy]
         constraints += [cp.abs(u[1, k]) <= max_thrust_xy]
-        constraints += [cp.abs(u[2, k]) <= max_thrust_z]
+        constraints += [u[2, k] <= max_thrust_z]
+        constraints += [u[2, k] >= 0]
         constraints += [cp.norm(u[:, k], 2) <= max_total_thrust]
 
         # radial constraint
@@ -1086,7 +1088,7 @@ def mpc_control_hover(N, x_init, v_init, x_target, dt, buffer):
     return x[:, 1:].value, v[:, 1:].value, u.value
 
 
-# In[36]:
+# In[ ]:
 
 
 def draw_or_remove_lines(points, draw=True, line_color=[0, 0, 0], line_width=5.0):
@@ -1127,7 +1129,7 @@ def draw_or_remove_lines(points, draw=True, line_color=[0, 0, 0], line_width=5.0
         return None
 
 
-# In[37]:
+# In[ ]:
 
 
 def total_path_length(vectors):
@@ -1143,7 +1145,7 @@ def total_path_length(vectors):
     return path_length
 
 
-# In[38]:
+# In[ ]:
 
 
 def show_messagebox(title, message):
@@ -1154,7 +1156,7 @@ def show_messagebox(title, message):
     root.destroy()  # Destroy the Toplevel instance after showing the message
 
 
-# In[39]:
+# In[ ]:
 
 
 def follower_mpc_rrt(robot_id, target_position, bounds, buffer, adjusted_min, adjusted_max):
@@ -1286,7 +1288,7 @@ def follower_mpc_rrt(robot_id, target_position, bounds, buffer, adjusted_min, ad
     follower_mpc_hover(robot_id, target_position, buffer)
 
 
-# In[40]:
+# In[ ]:
 
 
 def follower_mpc_astar(robot_id, target_position, heuristic_func, buffer, graph, adjusted_min, adjusted_max):
@@ -1418,7 +1420,7 @@ def follower_mpc_astar(robot_id, target_position, heuristic_func, buffer, graph,
     follower_mpc_hover(robot_id, target_position, buffer)
 
 
-# In[41]:
+# In[ ]:
 
 
 def follower_mpc_hover(robot_id, target_position, buffer):
@@ -1511,7 +1513,7 @@ def follower_mpc_hover(robot_id, target_position, buffer):
     global_mpc_value = np.zeros(3)
 
 
-# In[42]:
+# In[ ]:
 
 
 def randomizer():
@@ -1608,7 +1610,7 @@ def randomizer():
                     follower_mpc_astar(droneId, list(goal_point), heuristic, mpc_buffer, graph, default_adjusted_min, default_adjusted_max)
 
 
-# In[43]:
+# In[ ]:
 
 
 def generate_unique_filename(**params):
@@ -1637,7 +1639,7 @@ def load_graph_from_file(filepath):
 
 def get_or_compute_graph():
     global graph, graph_dir
-    global cell_size, buffer, space_outside_building, num_rows, num_cols, spacing, floors_min, floors_max, ROOM_HEIGHT, a_start_buffer
+    global cell_size, buffer, space_outside_building, num_rows, num_cols, spacing, floors_min, floors_max, ROOM_HEIGHT, a_start_buffer, random_seed
 
     # Create parameter dictionary
     params = {
@@ -1651,6 +1653,7 @@ def get_or_compute_graph():
         "floors_max": floors_max,
         "ROOM_HEIGHT": ROOM_HEIGHT,
         "a_start_buffer": a_start_buffer,
+        "random_seed": random_seed,
     }
 
     # Generate the unique filename for these parameters
@@ -1699,7 +1702,7 @@ def get_graph():
     return graph
 
 
-# In[44]:
+# In[ ]:
 
 
 def run_simulation():
@@ -1767,7 +1770,7 @@ def run_simulation():
     p.disconnect()
 
 
-# In[45]:
+# In[ ]:
 
 
 def create_progress_gui():
@@ -1794,7 +1797,7 @@ def create_progress_gui():
     canvas_y.pack(pady=20)
 
     # Z Thrust (MPC Value 2, Range -max_thrust_z to max_thrust_z)
-    label_z = Label(root, text=f"Z thrust (-{max_thrust_z} to {max_thrust_z})", font=("Arial", 14))
+    label_z = Label(root, text=f"Z thrust (0 to {max_thrust_z})", font=("Arial", 14))
     label_z.pack(pady=10)
 
     canvas_z = Canvas(root, width=400, height=40, bg="black", highlightthickness=0)  # Width increased
@@ -1852,7 +1855,7 @@ def create_progress_gui():
         canvas_y.create_rectangle(0, rect_top_y, canvas_y.winfo_width(), rect_bottom_y, fill=color_y, outline="")
 
         # Update Z Thrust Bar (MPC Value 2, Range -max_thrust_z to max_thrust_z)
-        rect_center_z = (display_values[2] + max_thrust_z) / (2 * max_thrust_z) * canvas_width
+        rect_center_z = display_values[2] / max_thrust_z * canvas_width
         rect_width_z = 60  # Doubled the width of the colored region
         rect_left_z = max(0, rect_center_z - rect_width_z / 2)
         rect_right_z = min(canvas_width, rect_center_z + rect_width_z / 2)
@@ -1870,7 +1873,7 @@ def create_progress_gui():
     root.mainloop()
 
 
-# In[46]:
+# In[ ]:
 
 
 def display_key_info():
@@ -1902,7 +1905,7 @@ def run_key_info_thread():
     key_info_thread.start()
 
 
-# In[47]:
+# In[ ]:
 
 
 simulation_thread = threading.Thread(target=run_simulation)
