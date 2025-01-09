@@ -96,6 +96,8 @@ os.makedirs(graph_dir, exist_ok=True)
 lag_free_sim = True
 random_seed = 42
 random.seed(random_seed)
+camera_follower = False
+camera_transition_hover = False
 
 
 # In[ ]:
@@ -1252,7 +1254,9 @@ def follower_mpc_rrt(robot_id, target_position, bounds, buffer, adjusted_min, ad
                 robot_orientation = compute_quaternion_for_orientation(thrust)
 
             if not lag_free_sim:
-                p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(robot_position))
+                if camera_follower:
+                    p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(robot_position))
+                
                 p.resetBasePositionAndOrientation(robot_id, list(robot_position), robot_orientation)
                 p.stepSimulation()
             else:
@@ -1268,7 +1272,9 @@ def follower_mpc_rrt(robot_id, target_position, bounds, buffer, adjusted_min, ad
 
             update_sphere_positions(sim_next_states[i])
             global_mpc_value = sim_thrust[i]
-            p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=sim_next_state[i])
+            if camera_follower:
+                p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=sim_next_state[i])
+            
             p.resetBasePositionAndOrientation(robot_id, sim_next_state[i], sim_robot_orientation[i])
             p.stepSimulation()
             time.sleep(sim_dt[i])
@@ -1285,7 +1291,7 @@ def follower_mpc_rrt(robot_id, target_position, bounds, buffer, adjusted_min, ad
     global_mpc_value = np.zeros(3)
     draw_or_remove_lines(np.array(path), False)
     update_sphere_positions(np.zeros((3, N)))
-    follower_mpc_hover(robot_id, target_position, buffer)
+    follower_mpc_hover(robot_id, target_position, buffer, velocity)
 
 
 # In[ ]:
@@ -1384,7 +1390,9 @@ def follower_mpc_astar(robot_id, target_position, heuristic_func, buffer, graph,
                 robot_orientation = compute_quaternion_for_orientation(thrust)
 
             if not lag_free_sim:
-                p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(robot_position))
+                if camera_follower:
+                    p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(robot_position))
+                
                 p.resetBasePositionAndOrientation(robot_id, list(robot_position), robot_orientation)
                 p.stepSimulation()
             else:
@@ -1400,7 +1408,9 @@ def follower_mpc_astar(robot_id, target_position, heuristic_func, buffer, graph,
 
             update_sphere_positions(sim_next_states[i])
             global_mpc_value = sim_thrust[i]
-            p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=sim_next_state[i])
+            if camera_follower:
+                p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=sim_next_state[i])
+            
             p.resetBasePositionAndOrientation(robot_id, sim_next_state[i], sim_robot_orientation[i])
             p.stepSimulation()
             time.sleep(sim_dt[i])
@@ -1417,13 +1427,13 @@ def follower_mpc_astar(robot_id, target_position, heuristic_func, buffer, graph,
     global_mpc_value = np.zeros(3)
     draw_or_remove_lines(np.array(path), False)
     update_sphere_positions(np.zeros((3, N)))
-    follower_mpc_hover(robot_id, target_position, buffer)
+    follower_mpc_hover(robot_id, target_position, buffer, velocity)
 
 
 # In[ ]:
 
 
-def follower_mpc_hover(robot_id, target_position, buffer):
+def follower_mpc_hover(robot_id, target_position, buffer, velocity = np.zeros(3)):
     global start_position_to_repeat
     global goal_position_to_repeat
     global global_mpc_value
@@ -1442,7 +1452,7 @@ def follower_mpc_hover(robot_id, target_position, buffer):
     robot_position, robot_orientation = p.getBasePositionAndOrientation(robot_id)
     robot_position = np.array(robot_position)
     target_position = np.array(target_position)
-    velocity = np.zeros(3)
+    #velocity = np.zeros(3)
     mpc_counter = 0
  
     while True:
@@ -1506,7 +1516,9 @@ def follower_mpc_hover(robot_id, target_position, buffer):
         if show_orientation:
             robot_orientation = compute_quaternion_for_orientation(thrust)
                 
-        p.resetDebugVisualizerCamera(cameraDistance=2.5, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(target_position))
+        if camera_transition_hover:
+            p.resetDebugVisualizerCamera(cameraDistance=2.5, cameraYaw=50, cameraPitch=-30, cameraTargetPosition=list(target_position))
+        
         p.resetBasePositionAndOrientation(robot_id, list(robot_position), robot_orientation)
         p.stepSimulation()
 
