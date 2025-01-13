@@ -1,0 +1,254 @@
+<?xml version='1.0'?>
+<robot name="room">
+
+    <link name="odom">
+    </link>
+
+    <material name="white">
+        <color rgba="1 1 1 0.75"/>
+    </material>
+
+    <!-- Define the wall -->
+    <link name='wall1'>
+        <!-- Visual representation -->
+        <visual name='visual'>
+            <geometry>
+                <!-- Wall size:-->
+                <box size="5 0.2 2"/>
+            </geometry>
+            <!-- Position the wall at the center of the specified corners -->
+            <origin xyz="0 2.4 1" rpy="0 0 0"/>
+        </visual>
+
+        <!-- Collision representation -->   
+        <collision name='collision'>
+            <geometry>
+                <!-- Same dimensions as visual -->
+                <box size="5 0.2 2"/>
+            </geometry>
+            <!-- Same position as visual -->
+            <origin xyz="0 2.4 1" rpy="0 0 0"/>
+        </collision>
+        
+        <!-- Apply the material -->
+        <material name="white"/>
+    </link>
+
+    <link name='wall2'>
+        <visual name='visual'>
+            <geometry>
+                <box size="0.2 5 2"/>
+            </geometry>
+            <origin xyz="-2.4 0 1" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="0.2 5 2"/>
+            </geometry>
+            <origin xyz="-2.4 0 1" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='wall3'>
+        <visual name='visual'>
+            <geometry>
+                <box size="0.2 5 2"/>
+            </geometry>
+            <origin xyz="2.4 0 1" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="0.2 5 2"/>
+            </geometry>
+            <origin xyz="2.4 0 1" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link>  
+
+    <link name='wall4a'>
+        <visual name='visual'>
+            <geometry>
+                <box size="5 0.2 0.5"/>
+            </geometry>
+            <origin xyz="0 -2.4 1.75" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="5 0.2 0.5"/>
+            </geometry>
+            <origin xyz="0 -2.4 1.75" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='wall4b'>
+        <visual name='visual'>
+            <geometry>
+                <box size="5 0.2 0.5"/>
+            </geometry>
+            <origin xyz="0 -2.4 0.25" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="5 0.2 0.5"/>
+            </geometry>
+            <origin xyz="0 -2.4 0.25" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='wall4c'>
+        <visual name='visual'>
+            <geometry>
+                <box size="1.5 0.2 1"/>
+            </geometry>
+            <origin xyz="-1.75 -2.4 1" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="1.5 0.2 1"/>
+            </geometry>
+            <origin xyz="-1.75 -2.4 1" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+
+    <link name='wall4d'>
+        <visual name='visual'>
+            <geometry>
+                <box size="1.5 0.2 1"/>
+            </geometry>
+            <origin xyz="1.75 -2.4 1" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="1.5 0.2 1"/>
+            </geometry>
+            <origin xyz="1.75 -2.4 1" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='ground1'>
+        <visual name='visual'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="1.25 1.25 0.05" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="1.25 1.25 0.05" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='ground2'>
+        <visual name='visual'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="-1.25 -1.25 0.05" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="-1.25 -1.25 0.05" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='ground3'>
+        <visual name='visual'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="-1.25 1.25 0.05" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="2.5 2.5 0.1"/>
+            </geometry>
+            <origin xyz="-1.25 1.25 0.05" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <link name='wall5'>
+        <visual name='visual'>
+            <geometry>
+                <box size="3 0.2 2"/>
+            </geometry>
+            <origin xyz="1 0.1 1" rpy="0 0 0"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <box size="3 0.2 2"/>
+            </geometry>
+            <origin xyz="1 0.1 1" rpy="0 0 0"/>
+        </collision>
+        <material name="white"/> 
+    </link> 
+
+    <joint name="wall1" type="fixed">
+		<parent link="odom"/>
+ 	    <child link="wall1"/>
+    </joint>
+    
+    <joint name="wall2" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall2"/>
+    </joint>
+
+    <joint name="wall3" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall3"/>
+    </joint>
+
+    <joint name="wall4a" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall4a"/>
+    </joint>
+
+    <joint name="wall4b" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall4b"/>
+    </joint>
+
+    <joint name="wall4c" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall4c"/>
+    </joint>
+
+    <joint name="wall4d" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall4d"/>
+    </joint>
+
+    <joint name="ground1" type="fixed">
+        <parent link="odom"/>       
+        <child link="ground1"/>
+    </joint>
+
+    <joint name="ground2" type="fixed">
+        <parent link="odom"/>       
+        <child link="ground2"/>
+    </joint>
+
+    <joint name="ground3" type="fixed">
+        <parent link="odom"/>       
+        <child link="ground3"/>
+    </joint>
+
+    <joint name="wall5" type="fixed">
+        <parent link="odom"/>       
+        <child link="wall5"/>
+    </joint>
+
+
+</robot>
