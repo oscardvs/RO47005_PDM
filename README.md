@@ -1,30 +1,32 @@
-# RO47005_PDM
-Motion Planning for Indoor Fire Fighter Drone
+# PDM - Motion Planning for Indoor Fire Fighter Drone - README
 
-The **clean** project version is inside `project_root`
+## Student Information
+- **Name 1**: [Oscar Devos], [5245982]
+- **Name 2**: [Clara Espirito Santo], [5557917]
+- **Name 3**: [Leander Le Ba], [6291325]
+- **Name 4**: [Nitya Nanvani], [6140289]
 
-**RRT** and **RRT_star** are both implemented and working.
+## Overview
+This repository contains the files necessary to execute the developed path and motion planning algorithms and run the simulation to reproduce and visualize the results. All instructions, shell commands, and files necessary to reproduce the results are included. It could be that some additional packages need to be installed.
 
-#RUN
-```
-cd ~/RO47005_PDM/project_root
-conda activate drones
-python visualize_test.py
-```
+---
 
-* In order to switch between RRT and RRT_star. Uncomment and comment the imports and the function call in `visualize_test.py` (line 180 - 200 and start of code)
+## Instructions:
 
-#DEV MODE
-If you want to work locally. 
-- Change NUM_BUILDINGS to 1 (line 30 of visualize_test.py) to avoid building an entire city each time
-- In line 46 of visualize_test.py, change num_floors = random.randint(2, 2) to only generate 2 floors.
+1. Create a new local repository to clone this repository to (chosen name and location may be different):
+     ```bash
+     mkdir -p ~/PDM_project
+     ```
 
-#NEXT TO IMPLEMENT
+2. Change to the newly created directory:
+     ```bash
+     cd ~/PDM_project
+     ```
+   and then clone the Git repository:
+     ```bash
+     git clone git@gitlab.ro47003.me.tudelft.nl:students-2425/ro47003_mirte_simulator.git
+     ```
+     
+3. 
 
-- Spawn the drone instead of a ball (takes literally 5 min its 3 lines of code)
-- Understand how drone naviguates
-- Develop path follower/controller
-- Apply the controller to the drone
-- Fine tune paramters to generate path quicker and have smallest offset path/drone_pos
-- ...
-- Apply other path making algos
+---
