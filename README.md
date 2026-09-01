@@ -1,55 +1,51 @@
-# PDM - Motion Planning for Indoor Firefighter Drone - README
+# RO47005 PDM: Motion Planning for an Indoor Firefighter Drone
 
-## Student Information
-- **Name 1**: Oscar Devos, 5245982
-- **Name 2**: Clara Espirito Santo, 5557917
-- **Name 3**: Leander Le Ba, 6291325
-- **Name 4**: Nitya Nanvani, 6140289
+Course project for RO47005 Planning and Decision Making at TU Delft (2024–2025). The task is to plan and fly a quadrotor through a multi-storey building to a target floor. The final code builds a small grid of buildings in PyBullet, computes a global path with either A* on a grid or RRT, and follows that path with a convex model predictive controller (MPC, solved with cvxpy) that constrains the drone to a cylinder around the current path segment.
 
-## Overview
-This repository contains all the files required to execute the developed path and motion planning algorithms and to run the simulation for reproducing and visualizing the results. It includes detailed instructions, shell commands, and necessary files to ensure reproducibility. Note that some additional packages may need to be installed, which are not explicitly described in this README.
+Team: Oscar Devos, Clara Espirito Santo, Leander Le Ba, Nitya Nanvani
 
----
+## What is in the repository
 
-## Instructions
+- `Submission/`: the final code. `path_motion_sim.py` is a single script that builds the environment, plans, controls and visualizes. `assets/` holds the room URDF and the `cf2x` drone URDF and mesh.
+- `project_root/`: an earlier, modular version of the project (environment setup, RRT and RRT* planners, a PID controller and trajectory follower). Kept for reference; the submission script does not depend on it.
+- `dev_test_urdf/`: development notebooks and URDF experiments (collision checking, RRT and A* prototypes, an MPC notebook).
+- `report/`: LaTeX source of the report.
+- `PDM_Group_8_Project_preliminary_report.pdf`: the preliminary report.
+- `PDM_Project.pdf`: the course assignment brief.
+- `POA.txt`: the original plan of action. `README_old.md`: earlier notes on running `project_root`.
 
-1. **Create a new local directory for the repository (the name and location can vary):**
+## Requirements
+
+There is no requirements file. `path_motion_sim.py` imports `pybullet`, `numpy`, `cvxpy`, `scipy` and `matplotlib`, and uses `tkinter` for the GUI. Install these into a Python 3 environment before running.
+
+## Run
+
+1. Clone the repository and go to the submission folder:
    ```bash
-   mkdir -p ~/PDM_project
+   git clone https://github.com/oscardvs/RO47005_PDM.git
+   cd RO47005_PDM/Submission
+   ```
 
-2. **Navigate to the newly created directory and clone the repository:**
-   ```bash
-   cd ~/PDM_project
-   git clone git@gitlab.ro47003.me.tudelft.nl:students-2425/ro47003_mirte_simulator.git
-
-3. **Verify the repository content after cloning:**
-   Your local repository should contain the following files:
-   - `path_motion_sim.py`
-   - `assets` directory containing the drone and room URDF files
-   - `graph` directory (initially empty; it will contain generated grid-based graphs used for A*)
-
-4. **Run the path and motion planner along with the simulation:** 
-   Execute the following command:
+2. Start the planner and the simulation:
    ```bash
    python3 path_motion_sim.py
    ```
-   Upon execution, the following windows should open:
-   - A simulation environment in `PyBullet` where the environment is built, and the drone hovers
-   - A log window showing the time taken to generate or load the grid for A* (if previously saved)
-   - A visualization of the drone's current thrust values
-   - A `GUI` displaying possible user actions
+   On the first run the script creates a `graphs/` directory next to it. A* grids are cached there, so later runs with the same parameters load the grid instead of rebuilding it.
 
-5. **Control the motion planning execution using the `GUI` options:**
-   - Press **`F`** to select a random floor in the building as the goal
-   - Press **`A`** to use the A* algorithm as the path planner (this starts execution)
-   - Press **`R`** to use the RRT algorithm as the path planner (this starts execution)
-   - After the first execution, without changing the goal:
-     - Press **`Z`** to re-execute A* with the previous goal
-     - Press **`T`** to re-execute RRT with the previous goal
-   - When finished, press **`Q`** to quit the simulation
+   Four windows open:
+   - the PyBullet simulation, with the buildings built and the drone hovering
+   - a log window with the time taken to generate or load the A* grid
+   - a plot of the drone's current thrust values
+   - a small GUI listing the available key commands
 
-   **Note**: Both A* and RRT algorithms may take some time to execute. Once complete, the simulation will display the drone's movement from start to goal, followed by a pop-up window showing the performance metrics.
+3. Control the run from the GUI:
+   - `F`: select a random floor in the building as the goal
+   - `A`: plan with A* and start the flight
+   - `R`: plan with RRT and start the flight
+   - `Z`: re-run A* with the previous goal
+   - `T`: re-run RRT with the previous goal
+   - `Q`: quit
 
-6. **Modify global variables:**
-   The file `path_motion_sim.py` contains multiple global variables with default values. These can be adjusted as needed to customize the simulation behavior.
+   Both planners can take a while. When planning finishes, the simulation shows the drone flying from start to goal and then opens a pop-up with performance metrics.
 
+4. Tune the simulation. The top of `path_motion_sim.py` defines global variables with default values: drone mass and thrust limits, obstacle buffers, MPC horizon, RRT iterations, A* cell size, number and height of buildings, random seed, and camera options. Edit them to change the run.
